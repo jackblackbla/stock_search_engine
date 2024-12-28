@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
-import stockRoutes from './frameworks-and-drivers/api/express/stockRoutes';
-import { PostgresStockRepository } from './frameworks-and-drivers/database/PostgresStockRepository';
+import stockRoutes from './modules/stock/frameworks-and-drivers/api/express/stockRoutes';
+import { PostgresStockRepository } from './modules/stock/frameworks-and-drivers/database/PostgresStockRepository';
 
 const app = express();
 const port = process.env.PORT || 3000;

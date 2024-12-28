@@ -29,13 +29,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   },
-  "dependencies": {
-    "@types/dotenv": "^6.1.1",
-    "@types/express": "^5.0.0",
-    "@types/pg": "^8.11.10",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "pg": "^8.13.1",
-    "yahoo-finance2": "^2.13.3"
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   }
 }
