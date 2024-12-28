@@ -1,0 +1,52 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Stock {
+  id             Int      @id @default(autoincrement())
+  symbol         String   @unique
+  name           String
+  exchange       String
+  sector         String?
+  industry       String?
+  marketCap      Float?
+  price          Float?
+  volume         Float?
+  dividendYield  Float?
+  peRatio        Float?
+  eps            Float?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  financialStatements FinancialStatement[]
+}
+
+model FinancialStatement {
+  id               Int      @id @default(autoincrement())
+  stockId          Int
+  stock            Stock    @relation(fields: [stockId], references: [id])
+  year             Int
+  revenue          Float
+  costOfRevenue    Float
+  grossProfit      Float
+  operatingExpenses Float
+  operatingIncome  Float
+  netIncome        Float
+  eps              Float
+  totalAssets      Float
+  totalLiabilities Float
+  totalEquity      Float
+  currentAssets    Float
+  currentLiabilities Float
+  longTermDebt     Float
+  operatingCashFlow Float
+  investingCashFlow Float
+  financingCashFlow Float
+  freeCashFlow     Float
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}

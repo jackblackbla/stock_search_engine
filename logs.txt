@@ -1,0 +1,11 @@
+
+> stock_search_engine@1.0.0 dev
+> ts-node src/index.ts
+
+Connecting to PostgreSQL database with: {
+  user: 'postgres',
+  host: 'localhost',
+  database: 'postgres',
+  port: 5432
+}
+Server is running on port 3001
